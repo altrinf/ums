@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [[ $EUID != 0 ]]; then #kontrollon nese je user root apo jo
-	echo "Ju lutemi filloni si ROOT \"Perdoreni: su \" "
-	exit 1
-fi
+#if [[ $EUID != 0 ]]; then #kontrollon nese je user root apo jo
+#	echo "Ju lutemi filloni si ROOT \"Perdoreni: su \" "
+#	exit 1
+#fi
 
 while true; do
 	echo "========================="
@@ -23,6 +23,11 @@ while true; do
 	echo "q) Dilni"
 	echo ""
 	read -p "Zgjidhni nje opsion: " opsioni #merr input nga perdoruesi
+
+	if [[ $opsioni == "1" || $opsioni == "2" && $EUID != 0 ]]; then #kontrollon nese je user root apo jo
+		echo "Ju lutemi filloni si ROOT \"Perdoreni: su \" "
+		exit 1
+	fi
 	
 	case $opsioni in
 	
