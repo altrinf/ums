@@ -24,8 +24,8 @@ while true; do
 	echo ""
 	read -p "Zgjidhni nje opsion: " opsioni #merr input nga perdoruesi
 
-	if [[ $opsioni == "1" || $opsioni == "2" && $EUID != 0 ]]; then #kontrollon nese je user root apo jo
-		echo "Ju lutemi filloni si ROOT \"Perdoreni: su \" "
+	if [[ $opsioni == "1" || $opsioni == "2" && $EUID != 0 ]]; then #nese zgjedh opsionin 1 ose 2 kontrollon nese je user root apo jo
+		echo "Per te shtuar ose fshire user ju lutemi filloni si ROOT \"Perdoreni: su \" "
 		exit 1
 	fi
 	
